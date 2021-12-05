@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 19, 2021 12:53:04 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entity.Productcart" table="productcart" catalog="heroku_c304eb44a326e97" optimistic-lock="version">
+        <id name="idprocart" type="java.lang.Integer">
+            <column name="idprocart" />
+            <generator class="identity" />
+        </id>
+        <property name="productId" type="java.lang.Integer">
+            <column name="productID" />
+        </property>
+        <property name="pcname" type="string">
+            <column name="pcname" />
+        </property>
+        <property name="pcprice" type="big_decimal">
+            <column name="pcprice" precision="15" />
+        </property>
+        <property name="cateDetailName" type="string">
+            <column name="cateDetailName" length="50" not-null="true" />
+        </property>
+        <property name="personId" type="java.lang.Integer">
+            <column name="personID" />
+        </property>
+        <property name="ischeckout" type="java.lang.Integer">
+            <column name="ischeckout" />
+        </property>
+    </class>
+</hibernate-mapping>

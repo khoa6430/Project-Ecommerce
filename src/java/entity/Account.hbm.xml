@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 19, 2021 12:53:04 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entity.Account" table="account" catalog="heroku_c304eb44a326e97" optimistic-lock="version">
+        <id name="uid" type="java.lang.Integer">
+            <column name="uID" />
+            <generator class="identity" />
+        </id>
+        <property name="user" type="string">
+            <column name="user" />
+        </property>
+        <property name="pass" type="string">
+            <column name="pass" />
+        </property>
+        <property name="isSell" type="java.lang.Integer">
+            <column name="isSell" />
+        </property>
+        <property name="isAdmin" type="java.lang.Integer">
+            <column name="isAdmin" />
+        </property>
+    </class>
+</hibernate-mapping>
