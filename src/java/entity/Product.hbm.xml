@@ -14,7 +14,7 @@
         <property name="image" type="string">
             <column name="image" />
         </property>
-        <property name="price" type="big_decimal">
+        <property name="price" type="double">
             <column name="price" precision="15" />
         </property>
         <property name="description" type="string">

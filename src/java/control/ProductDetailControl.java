@@ -10,6 +10,7 @@ import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -40,11 +41,16 @@ public class ProductDetailControl extends HttpServlet {
         Product a = dao.getInforProduct(id);
         String namesp = a.getName();
         String imagesp = a.getImage();
-        BigDecimal pricesp = a.getPrice();
-        
+        Double pricesp = a.getPrice();
+        String description = a.getDescription();
+        List<Product> listSkincare = dao.getProductByCateName("",6, 1, 10);
+        List<Product> listSPRecommed = dao.getProductRecommed();
+        request.setAttribute("listSPRecommed", listSPRecommed);
+        request.setAttribute("listSkincare", listSkincare);
         request.setAttribute("namesp", namesp);
         request.setAttribute("imagesp", imagesp);
         request.setAttribute("pricesp", pricesp);
+        request.setAttribute("description", description);
         request.setAttribute("idsp", id);
         request.getRequestDispatcher("product-details.jsp").forward(request, response);
      

@@ -56,7 +56,7 @@ public class DAO {
         List<Product> list = null;
         Session s = NewHibernateUtil.getSessionFactory().getCurrentSession();
         s.beginTransaction();
-        String sql = " from Product where id = 70 or id = 219 or id = 27 or id = 55 or id = 217 or id = 5";
+        String sql = " from Product where  id = 70 or id = 130 or id = 27 or id = 55 or id = 171 or id = 113 ";
         Query q = s.createQuery(sql);
         list = q.list();
         if(s.isOpen()){ //myself

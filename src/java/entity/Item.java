@@ -6,7 +6,7 @@
 package entity;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 
 /**
  *
@@ -16,27 +16,27 @@ public class Item implements Serializable{
     private int iid;
     private Product product;
     private int iquanity;
-    private BigDecimal iprice;
+    private double iprice;
     private int pcuserid;
-    private BigDecimal totalprice;
+    private double totalprice;
    
     public Item() {
         super();
     }
 
-    public Item(int iid, Product product, int iquanity, BigDecimal iprice, int pcuserid) {
+    public Item(int iid, Product product, int iquanity, double iprice, int pcuserid) {
         this.iid = iid;
         this.product = product;
         this.iquanity = iquanity;
         this.iprice = iprice;
         this.pcuserid = pcuserid;
     }
-    public BigDecimal getTotalprice() {
-        return iprice.multiply(new BigDecimal(iquanity)); 
+    public double getTotalprice() {
+        return iprice*(double)iquanity; 
     }
 
-    public void setTotalprice(BigDecimal iprice,int iquanity) {
-        this.totalprice = iprice.multiply(new BigDecimal(iquanity));
+    public void setTotalprice(double iprice,int iquanity) {
+        this.totalprice = iprice*iquanity;
     }
     public int getIid() {
         return iid;
@@ -62,11 +62,11 @@ public class Item implements Serializable{
         this.iquanity = iquanity;
     }
 
-    public BigDecimal getIprice() {
+    public double getIprice() {
         return iprice;
     }
 
-    public void setIprice(BigDecimal iprice) {
+    public void setIprice(double iprice) {
         this.iprice = iprice;
     }
 

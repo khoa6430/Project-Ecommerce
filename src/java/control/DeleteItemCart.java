@@ -40,20 +40,19 @@ public class DeleteItemCart extends HttpServlet {
         HttpSession session = request.getSession();
         int id = Integer.parseInt(request.getParameter("iid"));//item id
         Order order = (Order) session.getAttribute("order");
+        double tongtienorder = order.getTotalorder();
         List<Item> listItems = order.getItems();
-        if(listItems.size()==1){
-            listItems.remove(id);
-            session.removeAttribute("order");
-        }
+ 
         if(listItems.size() == 1){
+            tongtienorder = 0;
             listItems.remove(0);
         }
         else{
+            tongtienorder = tongtienorder - listItems.get(id).getTotalprice();
             listItems.remove(id);
         }
       
-        
-      
+        order.setTotalorder(tongtienorder);
         request.getRequestDispatcher("cart.jsp").forward(request, response);
     }
 

@@ -42,15 +42,19 @@ public class UpdateQuantityCart extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("iid"));//item id
         String value = request.getParameter("value1");//value + -
         Order order = (Order) session.getAttribute("order");
+        double tongtienorder = order.getTotalorder();
         List<Item> listItems = order.getItems();
         if(value.equals("1")){
-            listItems.get(id).setIquanity(++qid);
+            tongtienorder = tongtienorder + listItems.get(id).getIprice();
+            listItems.get(id).setIquanity(++qid);          
         }
         else{
             if(qid!=1){
+                tongtienorder = tongtienorder - listItems.get(id).getIprice();
                 listItems.get(id).setIquanity(--qid);
             }
         }
+        order.setTotalorder(tongtienorder);
         request.setAttribute("value1", value);
         request.setAttribute("qid", qid);
         request.setAttribute("id", id);

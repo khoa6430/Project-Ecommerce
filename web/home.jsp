@@ -19,7 +19,8 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
+
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopee_logo.svg">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
@@ -90,7 +91,7 @@
                                                
                                                                             <div class="productinfo text-center">
                                                                                     <img src="${o.image}" alt="" />
-                                                                                    <h2>${o.price}</h2>
+                                                                                    <h2>$${o.price}</h2>
                                                                                     <p>${o.name}</p>
                                                                                 </a>
                                                                                     <a name="${o.id}" method="Get" class="btn btn-default add-to-cart"
@@ -100,7 +101,7 @@
                                                                             <div class="product-overlay">
                                                                                     <div class="overlay-content">
                                                                                         <a href="productdetail?pdid=${o.id}">
-                                                                                            <h2>${o.price}</h2>
+                                                                                            <h2>$${o.price}</h2>
                                                                                             <p>${o.name}</p>
                                                                                         </a>
                                                                                             <a name="${o.id}" method="Get" class="btn btn-default add-to-cart" 
@@ -148,7 +149,7 @@
 										<div class="single-products">
 											<div class="productinfo text-center">
 												 <img src="${o.image}" alt="" style="width: 183px;height:161px " />
-												<h2>${o.price}</h2>
+												<h2>$${o.price}</h2>
 												<p>${o.name}</p>
 												  <a name="${o.id}" method="Get" class="btn btn-default add-to-cart" 
                                                                                                onclick="showSwal('auto-close')">
@@ -168,7 +169,7 @@
 										<div class="single-products">
 											<div class="productinfo text-center">
 												 <img src="${o.image}" alt="" style="width: 183px;height:161px " />
-												<h2>${o.price}</h2>
+												<h2>$${o.price}</h2>
 												<p>${o.name}</p>
 												  <a name="${o.id}" method="Get" class="btn btn-default add-to-cart" 
                                                                                                onclick="showSwal('auto-close')">
@@ -188,7 +189,7 @@
 										<div class="single-products">
 											<div class="productinfo text-center">
 												 <img src="${o.image}" alt="" style="width: 183px;height:161px " />
-												<h2>${o.price}</h2>
+												<h2>$${o.price}</h2>
 												<p>${o.name}</p>
 												  <a name="${o.id}" method="Get" class="btn btn-default add-to-cart" 
                                                                                                onclick="showSwal('auto-close')">
@@ -207,7 +208,7 @@
 										<div class="single-products">
 											<div class="productinfo text-center">
 												 <img src="${o.image}" alt="" style="width: 183px;height:161px " />
-												<h2>${o.price}</h2>
+												<h2>$${o.price}</h2>
 												<p>${o.name}</p>
 												  <a name="${o.id}" method="Get" class="btn btn-default add-to-cart" 
                                                                                                onclick="showSwal('auto-close')">
@@ -225,7 +226,7 @@
 										<div class="single-products">
 											<div class="productinfo text-center">
 												 <img src="${o.image}" alt="" style="width: 183px;height:161px " />
-												<h2>${o.price}</h2>
+												<h2>$${o.price}</h2>
 												<p>${o.name}</p>
 												  <a name="${o.id}" method="Get" class="btn btn-default add-to-cart" 
                                                                                                onclick="showSwal('auto-close')">
@@ -251,7 +252,7 @@
 											<div class="single-products">
                                                                                             <div class="productinfo text-center">
                                                                                                     <img src="${o.image}" alt="" style="width: 183px;height:161px " />
-                                                                                                    <h2>${o.price}</h2>
+                                                                                                    <h2>$${o.price}</h2>
                                                                                                     <p>${o.name}</p>
                                                                                                     <a name="${o.id}" method="Get" class="btn btn-default add-to-cart" 
                                                                                                        accesskey=""onclick="showSwal('auto-close')">
@@ -270,7 +271,7 @@
 											<div class="single-products">
 												<div class="productinfo text-center">
                                                                                                     <img src="${o.image}" alt="" style="width: 183px;height:161px " />
-                                                                                                    <h2>${o.price}</h2>
+                                                                                                    <h2>$${o.price}</h2>
                                                                                                     <p>${o.name}</p>
                                                                                                     <a name="${o.id}" method="Get" class="btn btn-default add-to-cart" 
                                                                                                     onclick="showSwal('auto-close')">

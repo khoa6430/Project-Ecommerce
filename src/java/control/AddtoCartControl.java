@@ -12,6 +12,7 @@ import entity.Order;
 import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -43,13 +44,11 @@ public class AddtoCartControl extends HttpServlet {
         int quantity = 1;
         int id;
         DAO dao = new DAO();
-        int b3 = 999;
         double b4 =0;
         if(request.getParameter("pid")!=null){
             id = Integer.parseInt(request.getParameter("pid"));
             Product p = dao.getInforProduct(id);
             if(p!=null){ // kt san pham co o database khong
-                b3=1522;
                 if(request.getParameter("quantity")!=null){//lay sl sp ta vua add to cart
                     quantity = Integer.parseInt(request.getParameter("quantity"));
                 }
@@ -69,15 +68,19 @@ public class AddtoCartControl extends HttpServlet {
                     item.setTotalprice(p.getPrice(), quantity);
                     listItems.add(item);
                     order.setItems(listItems);
-                    b3=155;
+                    double tongtienorder = 0;
+                    tongtienorder = tongtienorder + item.getTotalprice();
+                    order.setTotalorder(tongtienorder);
                     session.setAttribute("order", order);                   
                 }else{
                     Order order = (Order) session.getAttribute("order");
                     List<Item> listItems = order.getItems();
+                    double tongtienorder = order.getTotalorder();
                     boolean check = false;
                     for(Item item: listItems){ //neu sp co roi thi tang sl 
                         if(item.getProduct().getId() == p.getId()){
                             item.setIquanity(item.getIquanity()+quantity);
+                            tongtienorder = tongtienorder + item.getTotalprice();
                             check=true;
                         }
                     }
@@ -91,7 +94,9 @@ public class AddtoCartControl extends HttpServlet {
                         item.setProduct(p);
                         item.setIprice(p.getPrice());
                         listItems.add(item);
+                        tongtienorder = tongtienorder + item.getTotalprice();
                     }
+                    order.setTotalorder(tongtienorder);
                     session.setAttribute("order", order);
                 }                             
             }

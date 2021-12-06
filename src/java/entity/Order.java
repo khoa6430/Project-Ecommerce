@@ -6,6 +6,7 @@
 package entity;
 
 import java.io.Serializable;
+
 import java.util.List;
 
 /**
@@ -17,6 +18,8 @@ public class Order implements Serializable{
     private Account customer;
     private List<Item> items;
     private int status;
+    private double totalorder;
+    
     
     public Order(){
         this.status=0;
@@ -53,5 +56,17 @@ public class Order implements Serializable{
     public void setStatus(int status) {
         this.status = status;
     }
+
+    public double getTotalorder() {
+        return totalorder;
+    }
+
+    public void setTotalorder(double totalorder) {
+        this.totalorder = totalorder;
+    }
+
+
+    
+    
     
 }
